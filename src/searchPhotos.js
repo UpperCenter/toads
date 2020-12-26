@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Unsplash, { toJson } from "unsplash-js";
 
 const unsplash = new Unsplash({
-	accessKey: "Z3LQSzVu33xqkuNPLQRxuWiMbyMh9yU58OhXlbnodaY",
+	accessKey: "",
 });
 export default function SearchPhotos() {
 	const [query, setQuery] = useState("");
@@ -15,7 +15,6 @@ export default function SearchPhotos() {
 			.photos(query)
 			.then(toJson)
 			.then((json) => {
-				// console.log(json);
 				setPics(json.results);
 			});
 	};
